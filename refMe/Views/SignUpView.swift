@@ -17,58 +17,54 @@ struct SignUpView: View {
     @State private var confirmPassword: String = ""
     
     var body: some View {
-        VStack (alignment: .center, spacing: 20) {
-            Spacer()
-            
-            Image("Logo")
-            
-            Group {
-                IconTextField(
-                    image: Image(systemName: "person"),
-                    placeholder: "email",
-                    keyboardType: .emailAddress,
-                    text: $email
-                )
+        BaseView() {
+            VStack (alignment: .center, spacing: 10) {
+                Spacer()
                 
-                IconTextField(
-                    image: Image(systemName: "lock"),
-                    placeholder: "password",
-                    isPassword: true,
-                    text: $password
-                )
+                Image("Logo")
                 
-                IconTextField(
-                    image: Image(systemName: "lock"),
-                    placeholder: "confirm password",
-                    isPassword: true,
-                    text: $confirmPassword
-                )
-            }
-            .formStyle()
-            
-            Button(action: { }) {
-                Text("Sign Up")
-            }
-            .accentColor(.red)
-            .buttonStyle(RoundedStyle())
-            
-            HStack {
-                Button(action: { self.presentation.wrappedValue.dismiss() }) {
-                    Text("Already have account.")
-                        .font(.headline)
+                Group {
+                    IconTextField(
+                        image: Image(systemName: "person"),
+                        placeholder: "email",
+                        keyboardType: .emailAddress,
+                        text: self.$email
+                    )
+                    
+                    IconTextField(
+                        image: Image(systemName: "lock"),
+                        placeholder: "password",
+                        isPassword: true,
+                        text: self.$password
+                    )
+                    
+                    IconTextField(
+                        image: Image(systemName: "lock"),
+                        placeholder: "confirm password",
+                        isPassword: true,
+                        text: self.$confirmPassword
+                    )
                 }
+                .formStyle()
+                
+                Button(action: { }) {
+                    Text("Sign Up")
+                }
+                .accentColor(.red)
+                .buttonStyle(RoundedStyle())
+                
+                HStack {
+                    Button(action: { self.presentation.wrappedValue.dismiss() }) {
+                        Text("Already have account.")
+                            .font(.headline)
+                    }
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
+            .padding(20)
         }
-        .padding(20)
-        .background(LinearGradient(
-            gradient: Gradient(colors: [Color.white, Color.gray.opacity(0.1)]),
-            startPoint: .top,
-            endPoint: .bottom)
-        )
-        .foregroundColor(Color.gray)
-        .edgesIgnoringSafeArea(.vertical)
+        
     }
 }
 

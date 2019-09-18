@@ -17,55 +17,50 @@ struct LoginView: View {
     
     var body: some View {
         NavigationView {
-            VStack (alignment: .center, spacing: 20) {
-                Spacer()
-                
-                Image("Logo")
-                
-                Group {
-                    IconTextField(
-                        image: Image(systemName: "person"),
-                        placeholder: "email",
-                        keyboardType: .emailAddress,
-                        text: $email
-                    )
+            BaseView() {
+                VStack (alignment: .center, spacing: 10) {
+                    Spacer()
                     
-                    IconTextField(
-                        image: Image(systemName: "lock"),
-                        placeholder: "password",
-                        isPassword: true,
-                        text: $password
-                    )
-                }
-                .formStyle()
-            
-                NavigationLink(destination: ProfileView(), tag: 1, selection: $loggedIn) {
-                    Button(action: { self.loggedIn = 1 }) {
-                        Text("Login")
+                    Image("Logo")
+                    
+                    Group {
+                        IconTextField(
+                            image: Image(systemName: "person"),
+                            placeholder: "email",
+                            keyboardType: .emailAddress,
+                            text: self.$email
+                        )
+                        
+                        IconTextField(
+                            image: Image(systemName: "lock"),
+                            placeholder: "password",
+                            isPassword: true,
+                            text: self.$password
+                        )
                     }
-                    .accentColor(.red)
-                    .buttonStyle(RoundedStyle())
-                }
+                    .formStyle()
                 
-                HStack {
-                    Text("Don't have account yet?")
-                    NavigationLink(destination: SignUpView()) {
-                        Text("Signup")
-                            .font(.headline)
+                    NavigationLink(destination: ProfileView(), tag: 1, selection: self.$loggedIn) {
+                        Button(action: { self.loggedIn = 1 }) {
+                            Text("Login")
+                        }
+                        .accentColor(.red)
+                        .buttonStyle(RoundedStyle())
                     }
+                    
+                    HStack {
+                        Text("Don't have account yet?")
+                        NavigationLink(destination: SignUpView()) {
+                            Text("Signup")
+                                .font(.headline)
+                        }
+                    }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
+                .padding(20)
             }
-            .padding(20)
-            .background(LinearGradient(
-                gradient: Gradient(colors: [Color.white, Color.gray.opacity(0.1)]),
-                startPoint: .top,
-                endPoint: .bottom)
-            )
-            .foregroundColor(Color.gray)
         }
-        .edgesIgnoringSafeArea(.vertical)
     }
 }
 

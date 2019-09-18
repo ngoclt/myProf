@@ -13,7 +13,7 @@ struct ProfileView: View {
     @Environment(\.presentationMode) var presentation
     
     var body: some View {
-        NavigationView {
+        BaseView() {
             VStack (alignment: .center, spacing: 20) {
                 Spacer()
                 
@@ -30,20 +30,13 @@ struct ProfileView: View {
                 Spacer()
             }
             .padding(20)
-            .background(LinearGradient(
-                gradient: Gradient(colors: [Color.white, Color.gray.opacity(0.1)]),
-                startPoint: .top,
-                endPoint: .bottom)
-            )
-            .foregroundColor(Color.gray)
         }
-        .edgesIgnoringSafeArea(.vertical)
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        ProfileView()
     }
 }
 

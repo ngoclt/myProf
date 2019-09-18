@@ -18,6 +18,7 @@
 		4C05595F23310F3A002964E6 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05595E23310F3A002964E6 /* ButtonStyles.swift */; };
 		4C05596123311AA4002964E6 /* FormStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05596023311AA4002964E6 /* FormStyle.swift */; };
 		4C05596623322D76002964E6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05596523322D76002964E6 /* ProfileView.swift */; };
+		4C0E79C72332574C00A79570 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E79C62332574C00A79570 /* BaseView.swift */; };
 		4C59F5C0233249B3004E6882 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59F5BF233249B3004E6882 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		4C05595E23310F3A002964E6 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		4C05596023311AA4002964E6 /* FormStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStyle.swift; sourceTree = "<group>"; };
 		4C05596523322D76002964E6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4C0E79C62332574C00A79570 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		4C59F5BF233249B3004E6882 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				4C05593B232F9CB7002964E6 /* LoginView.swift */,
 				4C05596523322D76002964E6 /* ProfileView.swift */,
 				4C59F5BF233249B3004E6882 /* SignUpView.swift */,
+				4C0E79C62332574C00A79570 /* BaseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				4C05596123311AA4002964E6 /* FormStyle.swift in Sources */,
 				4C59F5C0233249B3004E6882 /* SignUpView.swift in Sources */,
 				4C05593A232F9CB7002964E6 /* SceneDelegate.swift in Sources */,
+				4C0E79C72332574C00A79570 /* BaseView.swift in Sources */,
 				4C05596623322D76002964E6 /* ProfileView.swift in Sources */,
 				4C05593C232F9CB7002964E6 /* LoginView.swift in Sources */,
 			);
