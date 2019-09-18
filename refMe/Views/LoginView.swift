@@ -13,6 +13,8 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var email: String = ""
     
+    @State private var loggedIn: Int? = nil
+    
     var body: some View {
         NavigationView {
             VStack (alignment: .center, spacing: 20) {
@@ -20,33 +22,37 @@ struct LoginView: View {
                 
                 Image("Logo")
                 
-                    Group {
-                        IconTextField(
-                            image: Image(systemName: "person"),
-                            placeholder: "email",
-                            keyboardType: .emailAddress,
-                            text: $email
-                        )
-                        
-                        IconTextField(
-                            image: Image(systemName: "lock"),
-                            placeholder: "password",
-                            isPassword: true,
-                            text: $password
-                        )
-                    }
-                    .formStyle()
-            
-                Button(action: { }) {
-                    Text("Login")
+                Group {
+                    IconTextField(
+                        image: Image(systemName: "person"),
+                        placeholder: "email",
+                        keyboardType: .emailAddress,
+                        text: $email
+                    )
+                    
+                    IconTextField(
+                        image: Image(systemName: "lock"),
+                        placeholder: "password",
+                        isPassword: true,
+                        text: $password
+                    )
                 }
-                .accentColor(.red)
-                .buttonStyle(RoundedStyle())
+                .formStyle()
+            
+                NavigationLink(destination: ProfileView(), tag: 1, selection: $loggedIn) {
+                    Button(action: { self.loggedIn = 1 }) {
+                        Text("Login")
+                    }
+                    .accentColor(.red)
+                    .buttonStyle(RoundedStyle())
+                }
                 
                 HStack {
-                    Spacer()
                     Text("Don't have account yet?")
-                    Button(action: { }, label: { Text("Signup").font(.headline) })
+                    NavigationLink(destination: SignUpView()) {
+                        Text("Signup")
+                            .font(.headline)
+                    }
                 }
                 
                 Spacer()
