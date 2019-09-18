@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C055938232F9CB7002964E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C055937232F9CB7002964E6 /* AppDelegate.swift */; };
 		4C05593A232F9CB7002964E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C055939232F9CB7002964E6 /* SceneDelegate.swift */; };
-		4C05593C232F9CB7002964E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05593B232F9CB7002964E6 /* ContentView.swift */; };
+		4C05593C232F9CB7002964E6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05593B232F9CB7002964E6 /* LoginView.swift */; };
 		4C05593E232F9CB9002964E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C05593D232F9CB9002964E6 /* Assets.xcassets */; };
 		4C055941232F9CB9002964E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C055940232F9CB9002964E6 /* Preview Assets.xcassets */; };
 		4C055944232F9CB9002964E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C055942232F9CB9002964E6 /* LaunchScreen.storyboard */; };
@@ -33,7 +33,7 @@
 		4C055934232F9CB7002964E6 /* refMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = refMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C055937232F9CB7002964E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C055939232F9CB7002964E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C05593B232F9CB7002964E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4C05593B232F9CB7002964E6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4C05593D232F9CB9002964E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C055940232F9CB9002964E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C055943232F9CB9002964E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,10 +85,10 @@
 		4C055936232F9CB7002964E6 /* refMe */ = {
 			isa = PBXGroup;
 			children = (
+				4C05596423322CFC002964E6 /* Views */,
 				4C055959232FAF3E002964E6 /* UI */,
 				4C055937232F9CB7002964E6 /* AppDelegate.swift */,
 				4C055939232F9CB7002964E6 /* SceneDelegate.swift */,
-				4C05593B232F9CB7002964E6 /* ContentView.swift */,
 				4C05593D232F9CB9002964E6 /* Assets.xcassets */,
 				4C055942232F9CB9002964E6 /* LaunchScreen.storyboard */,
 				4C055945232F9CB9002964E6 /* Info.plist */,
@@ -122,6 +122,14 @@
 				4C05596023311AA4002964E6 /* FormStyle.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		4C05596423322CFC002964E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C05593B232F9CB7002964E6 /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +238,7 @@
 				4C055938232F9CB7002964E6 /* AppDelegate.swift in Sources */,
 				4C05596123311AA4002964E6 /* FormStyle.swift in Sources */,
 				4C05593A232F9CB7002964E6 /* SceneDelegate.swift in Sources */,
-				4C05593C232F9CB7002964E6 /* ContentView.swift in Sources */,
+				4C05593C232F9CB7002964E6 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
