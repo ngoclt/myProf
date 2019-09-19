@@ -50,7 +50,7 @@ struct LoginView: View {
                     
                     HStack {
                         Text("Don't have account yet?")
-                        NavigationLink(destination: SignUpView()) {
+                        NavigationLink(destination: SignUpView(viewModel: SignUpViewModel())) {
                             Text("Signup")
                                 .font(.headline)
                         }

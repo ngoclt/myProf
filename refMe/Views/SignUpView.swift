@@ -12,9 +12,12 @@ struct SignUpView: View {
     
     @Environment(\.presentationMode) var presentation
     
+    @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
+    
+    @ObservedObject var viewModel: SignUpViewModel
     
     var body: some View {
         BaseView() {
@@ -24,6 +27,12 @@ struct SignUpView: View {
                 Image("Logo")
                 
                 Group {
+                    IconTextField(
+                        image: Image(systemName: "person"),
+                        placeholder: "name",
+                        text: self.$name
+                    )
+                    
                     IconTextField(
                         image: Image(systemName: "person"),
                         placeholder: "email",
@@ -47,7 +56,9 @@ struct SignUpView: View {
                 }
                 .formStyle()
                 
-                Button(action: { }) {
+                Button(action: {
+                    self.viewModel.apply(.onSubmit(name: self.name, email: self.email, password: self.password, confirmPassword: self.confirmPassword))
+                }) {
                     Text("Sign Up")
                 }
                 .accentColor(.red)
@@ -64,13 +75,16 @@ struct SignUpView: View {
             }
             .padding(20)
         }
+        .alert(isPresented: $viewModel.isErrorShown) {
+            Alert(title: Text("Error"), message: Text(viewModel.errorMessage))
+        }
         
     }
 }
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(viewModel: SignUpViewModel())
     }
 }
 
