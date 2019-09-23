@@ -32,11 +32,12 @@ class SignUpViewModel: ObservableObject, Identifiable {
     
     @Published private(set) var user: User = User.unregistered
     @Published var isErrorShown = false
+    @Published var isCompleted = false
     @Published var errorMessage = ""
-    @Published private(set) var shouldShowIcon = false
     
     private let responseSubject = PassthroughSubject<User, Never>()
     private let errorSubject = PassthroughSubject<APIError, Never>()
+    private let finishedSubject = PassthroughSubject<Bool, Never>()
     
     private let apiService: APIServiceType
     
@@ -73,6 +74,10 @@ class SignUpViewModel: ObservableObject, Identifiable {
         let signUpStream = responseSubject
             .assign(to: \.user, on: self)
         
+        let isCompletedStream = responseSubject
+            .map { !$0.email.isEmpty }
+            .assign(to: \.isCompleted, on: self)
+        
         let errorMessageStream = errorSubject
             .map { error -> String in error.localizedDescription }
             .assign(to: \.errorMessage, on: self)
@@ -83,6 +88,7 @@ class SignUpViewModel: ObservableObject, Identifiable {
         
         cancellables += [
             signUpStream,
+            isCompletedStream,
             errorStream,
             errorMessageStream,
         ]

@@ -78,6 +78,15 @@ struct SignUpView: View {
         .alert(isPresented: $viewModel.isErrorShown) {
             Alert(title: Text("Error"), message: Text(viewModel.errorMessage))
         }
+        .alert(isPresented: $viewModel.isCompleted) {
+            Alert(
+                title: Text("Your account has been successfully registered."),
+                message: Text("Thank you for your registration! Your account is now ready to use."),
+                dismissButton: .default(Text("OK"), action: {
+                    self.presentation.wrappedValue.dismiss()
+                })
+            )
+        }
         
     }
 }
